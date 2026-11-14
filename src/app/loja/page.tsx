@@ -1,3 +1,4 @@
+import { BrandAsterisk } from '@/components/brand-asterisk';
 import Link from 'next/link';
 import { Search, SlidersHorizontal, ArrowRight } from 'lucide-react';
 import { catalog, taxonomies } from '@/lib/catalog';
@@ -100,7 +101,7 @@ export default async function Shop({
         </div>
       ) : (
         <div className="empty-state">
-          <span>✳</span>
+          <span><BrandAsterisk /></span>
           <h2>
             {error
               ? 'Catálogo temporariamente indisponível'

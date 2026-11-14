@@ -29,6 +29,7 @@ try {
   await rm(out, { recursive: true, force: true });
   await mkdir(out, { recursive: true });
   await cp('public', out, { recursive: true });
+  await cp('src/app/icon.png', path.join(out, 'icon.png'));
   await cp('.next/static', path.join(out, '_next/static'), { recursive: true });
   await writeFile(path.join(out, '.nojekyll'), '');
   browser = await chromium.launch({ headless: true, ...(process.env.PAGES_BROWSER_CHANNEL ? { channel: process.env.PAGES_BROWSER_CHANNEL } : {}) });

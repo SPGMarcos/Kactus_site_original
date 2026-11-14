@@ -1,3 +1,4 @@
+import { BrandAsterisk } from '@/components/brand-asterisk';
 import Link from 'next/link';
 import {
   ArrowRight,
@@ -35,7 +36,7 @@ export default async function Home() {
             Comprar agora <ArrowUpRight size={19} />
           </Link>
           <div className="hero-bottom">
-            <span className="small-star">✳</span>
+            <span className="small-star"><BrandAsterisk /></span>
             <span>
               PERSONALIDADE EM
               <br />
@@ -142,7 +143,7 @@ export default async function Home() {
           </div>
         ) : (
           <div className="collection-empty">
-            <div className="outline-flower">✳</div>
+            <div className="outline-flower"><BrandAsterisk /></div>
             <div>
               <span className="eyebrow">A PRÓXIMA COLEÇÃO COMEÇA AQUI</span>
               <h3>Um novo capítulo do seu estilo.</h3>
