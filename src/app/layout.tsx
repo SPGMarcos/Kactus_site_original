@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR">
-      <body>
+      <body id="topo">
         <CartProvider>
           <a className="skip-link" href="#conteudo">
             Pular para o conteúdo

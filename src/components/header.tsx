@@ -1,13 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import {
-  Search,
-  UserRound,
-  ShoppingBag,
-  Menu,
-  X,
-} from 'lucide-react';
+import { Search, UserRound, ShoppingBag, Menu, X } from 'lucide-react';
 import * as Dialog from '@radix-ui/react-dialog';
 import { useCart } from './cart-provider';
 export function Header() {
@@ -15,9 +9,7 @@ export function Header() {
   const path = usePathname();
   return (
     <>
-      <div className="announcement">
-        REFERÊNCIA EM MODA MASCULINA{' '}
-      </div>
+      <div className="announcement">REFERÊNCIA EM MODA MASCULINA </div>
       <header className="header">
         <Link className="brand" href="/" aria-label="Kactus Stylish, início">
           <img src="/logo.png" alt="" />
@@ -32,8 +24,12 @@ export function Header() {
           <Link className={path === '/loja' ? 'active' : ''} href="/loja">
             Loja
           </Link>
-          <Link href="/loja?sort=new">Novidades</Link>
-          <Link href="/#essencia">Nossa essência</Link>
+          <Link
+            className={path === '/novidades' ? 'active' : ''}
+            href="/novidades"
+          >
+            Novidades
+          </Link>
         </nav>
         <div className="header-actions">
           <Link href="/loja#busca" aria-label="Buscar produtos">
@@ -73,8 +69,7 @@ export function Header() {
                 {[
                   ['/', 'Início'],
                   ['/loja', 'Loja'],
-                  ['/conta', 'Minha conta'],
-                  ['/carrinho', 'Carrinho'],
+                  ['/novidades', 'Novidades'],
                 ].map(([href, label]) => (
                   <Dialog.Close asChild key={href}>
                     <Link href={href}>{label}</Link>

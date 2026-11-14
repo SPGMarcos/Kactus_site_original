@@ -1,32 +1,20 @@
 import Link from 'next/link';
-import { ArrowUpRight, Camera as Instagram } from 'lucide-react';
+
 import { settings } from '@/lib/catalog';
+import { FooterHomeLink } from './footer-home-link';
 export async function Footer() {
   const s = await settings();
   return (
     <footer>
       <div className="footer-top">
-        <div>
-          <Link href="/" className="footer-brand">
-            KACTUS<span>STYLISH</span>
-          </Link>
-          <p>
-            Mais que vestir.
-            <br />É sobre marcar presença.
-          </p>
-          <a
-            href="https://www.instagram.com/kactus_stylish_01/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <Instagram size={17} /> @kactus_stylish_01{' '}
-            <ArrowUpRight size={15} />
-          </a>
+        <div className="footer-brand-block">
+          <FooterHomeLink />
         </div>
         <div>
           <h3>Explore</h3>
           <Link href="/">Início</Link>
           <Link href="/loja">Loja</Link>
+          <Link href="/novidades">Novidades</Link>
           <Link href="/carrinho">Carrinho</Link>
           <Link href="/conta">Minha conta</Link>
         </div>
@@ -45,11 +33,18 @@ export async function Footer() {
           >
             Nos encontre no Instagram ↗
           </a>
-          {s?.whatsapp && (
-            <a href={`https://wa.me/${s.whatsapp.replace(/\D/g, '')}`}>
-              WhatsApp
-            </a>
-          )}
+          <a
+            href={
+              s?.whatsapp
+                ? `https://wa.me/${s.whatsapp.replace(/\D/g, '')}`
+                : 'https://bio.site/kactusstylish01'
+            }
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            WhatsApp das lojas ↗
+          </a>
+          <p>Buenópolis e Curvelo · MG</p>
           {s?.address && <p>{s.address}</p>}
           <span className="footer-note">Moda masculina. Sua identidade.</span>
         </div>

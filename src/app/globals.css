@@ -129,7 +129,7 @@ input[type='checkbox'] {
   color: #d1d4bf;
 }
 .header {
-  height: 104px;
+  height: 76px;
   border-bottom: 1px solid var(--line);
   display: flex;
   align-items: center;
@@ -143,8 +143,8 @@ input[type='checkbox'] {
   gap: 10px;
 }
 .brand img {
-  height: 57px;
-  width: 57px;
+  height: 48px;
+  width: 48px;
   border-radius: 50%;
 }
 .brand > span {
@@ -569,13 +569,13 @@ input[type='checkbox'] {
 footer {
   background: #20231d;
   color: #daddcf;
-  padding: 50px 6% 0;
+  padding: 30px 6% 0;
 }
 .footer-top {
   display: grid;
   grid-template-columns: 1.5fr 0.8fr 1fr 1.2fr;
   gap: 35px;
-  padding-bottom: 45px;
+  padding-bottom: 25px;
 }
 .footer-brand {
   font-family: Georgia, serif;
@@ -1412,4 +1412,140 @@ th {
 }
 .editorial-card .photo-red {
   background-position: 61% 100%;
+}
+
+/* Instagram e contatos das lojas */
+.instagram-editorial {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 48px 6%;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  gap: 0;
+  scroll-margin-top: 100px;
+}
+.instagram-kicker {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #64645e;
+  font-size: 12px;
+  margin-bottom: 14px;
+}
+.instagram-kicker svg {
+  width: 20px;
+  height: 20px;
+}
+.instagram-copy h2 {
+  font-size: clamp(24px, 2.4vw, 32px);
+  font-weight: 500;
+  letter-spacing: -0.8px;
+  margin-bottom: 10px;
+}
+.instagram-copy p {
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+.instagram-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.contact-panel {
+  padding: 8px 0 8px 40px;
+  border-left: 1px solid var(--line);
+}
+.contact-kicker {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 14px;
+  color: #64645e;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+}
+.whatsapp-icon {
+  flex: 0 0 auto;
+  color: currentColor;
+}
+.contact-panel h2 {
+  margin-bottom: 10px;
+  font-size: clamp(22px, 2.1vw, 29px);
+  font-weight: 500;
+  letter-spacing: -0.6px;
+}
+.contact-panel p {
+  margin-bottom: 20px;
+  color: var(--muted);
+  font-size: 13px;
+}
+.contact-button {
+  gap: 12px;
+}
+
+@media (max-width: 700px) {
+  .instagram-editorial {
+    padding: 32px 6%;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .contact-panel {
+    padding: 24px 0 0;
+    border-top: 1px solid var(--line);
+    border-left: 0;
+  }
+}
+
+/* Contatos com títulos alinhados e assinatura centralizada. */
+.instagram-editorial {
+  align-items: stretch;
+}
+.instagram-copy {
+  padding-block: 8px;
+  display: flex;
+  flex-direction: column;
+}
+.instagram-kicker {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+}
+.instagram-copy h2 {
+  font-size: clamp(22px, 2.1vw, 29px);
+  letter-spacing: -0.6px;
+}
+.instagram-links {
+  margin-top: 0;
+  padding-top: 0;
+}
+.footer-brand-block {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+}
+.footer-brand-block .footer-brand {
+  font-size: clamp(40px, 3.5vw, 54px);
+  letter-spacing: 5px;
+}
+.footer-brand-block .footer-brand span {
+  font-size: 11px;
+  letter-spacing: 9px;
+  margin-top: 12px;
+  margin-bottom: 0;
+}
+
+
+
+
+/* Keep primary navigation under the centered announcement. */
+@media (min-width: 701px) {
+  .header { position: relative; }
+  .desktop-nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    gap: 33px;
+    font-size: 12px;
+  }
 }
