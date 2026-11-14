@@ -8,3 +8,4 @@ test-results/
 .supabase/
 supabase/.temp/
 .tools/
+pages-dist/
